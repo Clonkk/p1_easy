@@ -8,8 +8,8 @@ import (
 	"rsc.io/quote"
 )
 
-func safeGreeting(name string) {
-	message, err := greetings.Hello(name)
+func safeGreeting(names []string) {
+	messages, err := greetings.Hellos(names)
 	// If an error was returned, print it to the console and
 	// exit the program.
 	if err != nil {
@@ -17,7 +17,9 @@ func safeGreeting(name string) {
 	}
 	// If no error was returned, print the returned message
 	// to the console.
-	fmt.Println(message)
+	for _, message := range messages {
+		fmt.Println(message)
+	}
 }
 
 func main() {
@@ -29,6 +31,6 @@ func main() {
 
 	fmt.Println("Hello, world !")
 	fmt.Println(quote.Go())
-	safeGreeting("Clonkk")
-	safeGreeting("")
+	names := []string{"Clonkk", "", "Glados"}
+	safeGreeting(names)
 }
