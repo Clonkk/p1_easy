@@ -16,6 +16,15 @@ func TestHelloName(t *testing.T) {
 	}
 }
 
+// func TestBadHelloName(t *testing.T) {
+// 	name := "Gladys"
+// 	want := regexp.MustCompile(`\b` + name + `\b`)
+// 	msg, err := Hello("Gladys")
+// 	t.Fatalf(`Hello("Gladys") = %q, %v, want match for %#q, nil`, msg, err, want)
+// 	if want.MatchString(msg) {
+// 	}
+// }
+
 // TestHelloEmpty calls greetings.Hello with an empty string,
 // checking for an error.
 func TestHelloEmpty(t *testing.T) {
